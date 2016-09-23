@@ -1,0 +1,16 @@
+html, body{
+    width:100%;
+    height:100%;
+}
+.image{
+    height:75px;
+    width: 75px;
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+.board{
+    width: 50%;
+    height: 50%;
+}
