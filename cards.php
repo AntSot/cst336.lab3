@@ -89,7 +89,7 @@
             "12" => array(
                 "suit"=>"clubs",
                 "face"=>"queen",
-                "img"=>"images/clubs.12.png",
+                "img"=>"images/clubs/12.png",
                 "num_value"=>12),
 
             "13" => array(

@@ -1,0 +1,56 @@
+.playerIcon{
+    display:inline;
+}
+
+.playerIcon img{
+    border-style: solid;
+    border-color:black;
+    border-width:3px;
+}
+
+.playerHand{
+    display:inline;
+}
+
+.playerHand img{
+    margin-left: 10px;
+    border-style:solid;
+    border-color:black;
+    border-width:1px;
+    height:96px;
+    width:72px;
+}
+
+#playButton{
+    border-color:#cc0000;
+    border-style: solid;
+    border-width:3px;
+    background-color: black;
+    color:white;
+    width:100px;
+    height:60px;
+    font-family: Helvetica;
+    font-size:24px;
+    margin:auto;
+    display:block;
+}
+
+#playButton:active{
+    color:black;
+    background-color: white;
+}
+
+.score{
+    font-size:32px;
+    font-family: Helvetica;
+    display: inline;
+}
+
+.winner{
+    color: red;
+    font-size: 36px;
+    font-family: Helvetica;
+    display: inline;
+    font-weight: bold;
+    visibility: hidden;
+}
