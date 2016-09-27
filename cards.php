@@ -334,6 +334,13 @@
                 "suit"=>"spades",
                 "face"=>"king",
                 "img"=>"images/spades/13.png",
-                "num_value"=>13)
+                "num_value"=>13),
+                
+        //BLANK CARD
+            "53" => array(
+                "suit"=>"blank",
+                "face"=>"none",
+                "img"=>"images/blank.png",
+                "num_value"=>0)
         );
         ?>

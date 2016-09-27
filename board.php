@@ -19,7 +19,7 @@
     $player4 = array(0, 0, 0, 0, 0, 0);
 
     
-    for($i = 0; $i < 6; $i++){
+    for($i = 0; $i < 4; $i++){
         $player1[$i] = $index_arr[$traverse];
         $traverse++;
         $player2[$i] = $index_arr[$traverse];
@@ -27,6 +27,27 @@
         $player3[$i] = $index_arr[$traverse];
         $traverse++;
         $player4[$i] = $index_arr[$traverse];
+        $traverse++;
+    }
+    
+    $extra = rand(0, 2);
+    for($i=0; $i<$extra; $i++){
+        $player1[4+$i] = $index_arr[$traverse];
+        $traverse++;
+    }
+    $extra = rand(0, 2);
+    for($i=0; $i<$extra; $i++){
+        $player2[4+$i] = $index_arr[$traverse];
+        $traverse++;
+    }
+    $extra = rand(0, 2);
+    for($i=0; $i<$extra; $i++){
+        $player3[4+$i] = $index_arr[$traverse];
+        $traverse++;
+    }
+    $extra = rand(0, 2);
+    for($i=0; $i<$extra; $i++){
+        $player4[4+$i] = $index_arr[$traverse];
         $traverse++;
     }
     ?>
@@ -45,14 +66,20 @@
                     echo "<img src=".$deck[$player1[2]]['img']." class="."playerCard".">";
                     echo "<img src=".$deck[$player1[3]]['img']." class="."playerCard".">";
                     //Need whitespace picture
-                    echo "<img src=".""." class="."playerCard".">";
-                    echo "<img src=".""." class="."playerCard".">";
-                    $player1score = 0;
-                    $player1score = $deck[$player1[0]]['num_val'];
+                    echo "<img src=".$deck[$player1[4]]['img']." class="."playerCard".">";
+                    echo "<img src=".$deck[$player1[5]]['img']." class="."playerCard".">";
                 ?>
             </div>
             
             <div class="score">
+                <?php
+                $player1score = $deck[$player1[0]]['num_value'] 
+                    + $deck[$player1[1]]['num_value'] 
+                    + $deck[$player1[2]]['num_value'] 
+                    + $deck[$player1[3]]['num_value']
+                    + $deck[$player1[4]]['num_value'] 
+                    + $deck[$player1[5]]['num_value'];
+                ?>
                 Score: <?php echo $player1score; ?>
             </div>
             
@@ -77,23 +104,26 @@
             
             <div class="playerHand">
                 <?php
-                    $card1 = rand(1, 52);
-                    $card2 = rand(1, 52);
-                    $card3 = rand(1, 52);
-                    $card4 = rand(1, 52);
-                    
                     echo "<img src=".$deck[$player2[0]]['img']." class="."playerCard".">";
                     echo "<img src=".$deck[$player2[1]]['img']." class="."playerCard".">";
                     echo "<img src=".$deck[$player2[2]]['img']." class="."playerCard".">";
                     echo "<img src=".$deck[$player2[3]]['img']." class="."playerCard".">";
                     //Need whitespace picture
-                    echo "<img src=".""." class="."playerCard".">";
-                    echo "<img src=".""." class="."playerCard".">";
+                    echo "<img src=".$deck[$player2[4]]['img']." class="."playerCard".">";
+                    echo "<img src=".$deck[$player2[5]]['img']." class="."playerCard".">";
                 ?>
             </div>
             
             <div class="score">
-                Score: XX
+                <?php
+                $player2score = $deck[$player2[0]]['num_value'] 
+                    + $deck[$player2[1]]['num_value'] 
+                    + $deck[$player2[2]]['num_value'] 
+                    + $deck[$player2[3]]['num_value']
+                    + $deck[$player2[4]]['num_value'] 
+                    + $deck[$player2[5]]['num_value'];
+                ?>
+                Score: <?php echo $player2score; ?>
             </div>
             
             <div class="winner">
@@ -112,24 +142,26 @@
             
             <div class="playerHand">
                 <?php
-                    $card1 = rand(1, 52);
-                    $card2 = rand(1, 52);
-                    $card3 = rand(1, 52);
-                    $card4 = rand(1, 52);
-
                     echo "<img src=".$deck[$player3[0]]['img']." class="."playerCard".">";
                     echo "<img src=".$deck[$player3[1]]['img']." class="."playerCard".">";
                     echo "<img src=".$deck[$player3[2]]['img']." class="."playerCard".">";
                     echo "<img src=".$deck[$player3[3]]['img']." class="."playerCard".">";
-
                     //Need whitespace picture
-                    echo "<img src=".""." class="."playerCard".">";
-                    echo "<img src=".""." class="."playerCard".">";
+                    echo "<img src=".$deck[$player3[4]]['img']." class="."playerCard".">";
+                    echo "<img src=".$deck[$player3[5]]['img']." class="."playerCard".">";
                 ?>
             </div>
 
             <div class="score">
-                Score: XX
+                <?php
+                $player3score = $deck[$player3[0]]['num_value'] 
+                    + $deck[$player3[1]]['num_value'] 
+                    + $deck[$player3[2]]['num_value'] 
+                    + $deck[$player3[3]]['num_value']
+                    + $deck[$player3[4]]['num_value'] 
+                    + $deck[$player3[5]]['num_value'];
+                ?>
+                Score: <?php echo $player3score; ?>
             </div>
             
             <div class="winner">
@@ -153,13 +185,21 @@
                     echo "<img src=".$deck[$player4[2]]['img']." class="."playerCard".">";
                     echo "<img src=".$deck[$player4[3]]['img']." class="."playerCard".">";
                     //Need whitespace picture
-                    echo "<img src=".""." class="."playerCard".">";
-                    echo "<img src=".""." class="."playerCard".">";
+                    echo "<img src=".$deck[$player4[4]]['img']." class="."playerCard".">";
+                    echo "<img src=".$deck[$player4[5]]['img']." class="."playerCard".">";
                 ?>
             </div>
             
             <div class="score">
-                Score: XX
+                <?php
+                $player4score = $deck[$player4[0]]['num_value'] 
+                    + $deck[$player4[1]]['num_value'] 
+                    + $deck[$player4[2]]['num_value'] 
+                    + $deck[$player4[3]]['num_value']
+                    + $deck[$player4[4]]['num_value'] 
+                    + $deck[$player4[5]]['num_value'];
+                ?>
+                Score: <?php echo $player4score; ?>
             </div>
             
             <div class="winner">
